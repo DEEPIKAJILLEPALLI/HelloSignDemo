@@ -1,17 +1,22 @@
-<!DOCTYPE html>
+<html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <title></title>
-    <script src="https://cdn.hellosign.com/public/js/embedded/v2.9.0/embedded.development.js"></script>
-
+  <script src="https://cdn.hellosign.com/public/js/embedded/v2.9.0/embedded.development.js"></script>
 </head>
+
 <body>
-<script>
-var client = new Client("74962f75f633d8c34f1413e93be3a249a9fa89e66203e78eec8f477da3d24ba6");
-var account = client.UpdateAccount(new Uri("https://deepikajillepalli.github.io/HelloSignDemo/index.html"));
-console.log(account);
-</script>
+  <script>
+    const client = new HelloSign({
+      clientId: "e26eb150d197da85152d4e7163a5b32b"
+    });
+    signUrl="https://app.hellosign.com/editor/embeddedSign?signature_id=83a8dab792ebe9b0570fc1e8d2abbc68&token=8d6aac128271a181877ae307642ccc68";
+    client.open(signUrl
+      , {
+        skipDomainVerification: true,
+        testMode:true
+      });
+
+  </script>
 </body>
+
 </html>
