@@ -1,15 +1,36 @@
-
 <html>
-  <head>
-    <script src="https://cdn.hellosign.com/public/js/embedded/v2.9.0/embedded.development.js"></script>
-  </head>
-  <body>
-    <script>
-      const client = new HelloSign();
-      signUrl="https://app.hellosign.com/editor/embeddedSign?signature_id=0ddc3ad319bee9591df23a9a168bbfbb&token=2ed7c96ee434dc3379b0d650e56615a7"
-      client.open(signUrl, {
-        clientId: 'e26eb150d197da85152d4e7163a5b32b'
+
+<head>
+  <script src="https://cdn.hellosign.com/public/js/embedded/v2.9.0/embedded.development.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <h1>hello</h1>
+
+  <script>
+   debugger;
+      $.ajax({
+      url: "YOUR API URL "+"hellosign/signatureId",
+      type: 'GET',
+      success: function (data) {
+        const client = new HelloSign();
+        client.open(data.EmbeddedSignUrl
+      , {
+        clientId :"hello sign ClientId",
+        skipDomainVerification: true,
+        testMode:true
       });
-    </script>
-  </body>
+      },
+      error: function (data, errorThrown) {
+        alert("error in document loading");
+      }
+    });
+    
+   
+
+  </script>
+</body>
+
 </html>
